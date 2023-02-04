@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('hello');
 });
@@ -20,3 +20,4 @@ Route::Fallback(function(){
     return view('404');
 }
 );
+Route::get('/home', [HomeController::class]);
