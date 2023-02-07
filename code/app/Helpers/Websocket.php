@@ -36,7 +36,7 @@ class Websocket implements MessageComponentInterface
             ];
         $logMessage = $returnMessage['message'] . '; code: ' . $returnMessage['code'];
 
-        if ($msg == 1) {
+        if (isset(self::MESSAGES[$msg])) {
             foreach ($this->clients as $client) {
                 if ($from !== $client) {
                     // The sender is not the receiver, send to each client connected
