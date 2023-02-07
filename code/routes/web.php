@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (){
     return view('hello');
 });
-/*Route::get('/news', NewsController::class)->name('NewsHomepage');
-Route::get('/hello', [MenuController::class, 'hello'])->name('hello');
-Route::get('/home', [MenuController::class, 'home'])->name('home');
-Route::get('/', MenuController::class)->name('Homepage');
-Route::get('/news/{id}', [NewsController::class, 'show'])->name('news{id}');
 
 Route::Fallback(function(){
     return view('404');
 }
-);*/
+);
