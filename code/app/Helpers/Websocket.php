@@ -40,7 +40,7 @@ class Websocket implements MessageComponentInterface
             foreach ($this->clients as $client) {
                 if ($from !== $client) {
                     // The sender is not the receiver, send to each client connected
-                    $client->send(json_encode($returnMessage));
+                    $client->send(json_encode($returnMessage), JSON_UNESCAPED_UNICODE);
                 }
             }
             Log::alert($logMessage);
