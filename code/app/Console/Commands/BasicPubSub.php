@@ -1,11 +1,13 @@
 <?php
-namespace App\Helpers;
+
+namespace App\Console\Commands;
+
 use Illuminate\Support\Facades\Log;
-use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
+use Ratchet\MessageComponentInterface;
 use SplObjectStorage;
 
-class Websocket implements MessageComponentInterface
+class BasicPubSub implements MessageComponentInterface
 {
     const MESSAGES = [
         '0' => 'Authorized access',
@@ -33,7 +35,7 @@ class Websocket implements MessageComponentInterface
         $returnMessage = [
             'code' => $msg,
             'message' => self::MESSAGES[$msg] ?? self::ERROR_MSG,
-            ];
+        ];
         $logMessage = $returnMessage['message'] . '; code: ' . $returnMessage['code'];
 
         if ($msg == 1) {

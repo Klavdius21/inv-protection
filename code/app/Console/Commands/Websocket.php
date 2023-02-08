@@ -7,7 +7,7 @@ use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;
 use Ratchet\WebSocket\WsServer;
 
-class websocket extends Command
+class Websocket extends Command
 {
     /**
      * The name and signature of the console command.
@@ -46,7 +46,7 @@ class websocket extends Command
                     new \App\Helpers\Websocket()
                 )
             ),
-            8080
+            env('WEBSOCKET_PORT', 8080)
         );
 
         $server->run();

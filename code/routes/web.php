@@ -1,7 +1,12 @@
 <?php
 
+use App\Helpers\Websocket;
+use App\Helpers\WebSocketHandler;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SendController;
+use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (){
+Route::get('/', function () {
     return view('hello');
 });
 
-Route::Fallback(function(){
+Route::get('/send2', SendController::class);
+
+Route::Fallback(function() {
     return view('404');
-}
-);
+});
