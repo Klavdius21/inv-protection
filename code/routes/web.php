@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('hello');
 });
 
-Route::get('/send2', SendController::class);
+Route::get('/send', SendController::class);
 
 Route::Fallback(function() {
     return view('404');
